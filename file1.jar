@@ -1,0 +1,68 @@
+import java.util.Scanner;
+public class Demo {
+
+  public static void main(String[] args) {
+      Scanner scanner = new Scanner(System.in); 
+        int i = scanner.nextInt();
+        while(i != 0){
+        int number = scanner.nextInt();
+        scanner.nextLine(); 
+        String letters = scanner.nextLine();
+        int index = 0;
+        int move = 0;
+        while (index < letters.length()) {
+            if(letters.charAt(index) == 'U'){
+            String words = "";
+            int a = index;
+            int ind = 0;
+            while(ind < letters.length()){
+                    if(ind != a){
+                    if(letters.length() == 2){
+                            words = words+letters.charAt(ind);
+                    } else{
+                    if(a == letters.length()-1 && ind == 0){
+                             
+                            if(letters.charAt(ind) == 'U' ){
+                                     System.out.println(ind);
+                               words = words+'D';
+                             } else if(letters.charAt(ind) == 'D'){
+                               words = words+'U';
+                             }    
+                    } else if(ind == a-1 || ind == a+1){
+                            
+                         if(letters.charAt(ind) == 'U' ){
+                           words = words+'D';
+                         } else if(letters.charAt(ind) == 'D'){
+                           words = words+'U';
+                         }     
+                    } else if(a == 0 && ind == letters.length()-1){
+                         if(letters.charAt(ind) == 'U' ){
+                           words = words+'D';
+                         } else if(letters.charAt(ind) == 'D'){
+                           words = words+'U';
+                         }       
+                        
+                         }else {
+                           words = words+letters.charAt(ind);
+                         }
+                    }
+                    }
+                    ind++;
+            } 
+                    move++;
+            letters = words;
+            index = -1;
+            }
+            index++;
+        }
+       if(move%2==0){
+                System.out.println("NO");
+       } 
+       if(move%2==1){
+               
+                 System.out.println("YES");
+       }
+        i = i -1;
+       }
+  }
+}
