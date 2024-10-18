@@ -1,0 +1,25 @@
+//https://codeforces.com/contest/1950/problem/A
+import java.util.Scanner;
+import java.lang.Math; 
+import java.util.Arrays;
+public class Demo {
+ 
+  public static void main(String[] args) {
+          Scanner scanner = new Scanner(System.in); 
+          int number1 = scanner.nextInt();
+          int i1 = 0;
+          while(i1 < number1){
+                   int number2 = scanner.nextInt();
+                   int number3 = scanner.nextInt();
+                   int number4 = scanner.nextInt();
+                   if(number2 < number3 && number3 < number4){
+                           System.out.println("STAIR");
+                   } else if(number2 < number3 &&  number3 > number4){
+                           System.out.println("PEAK");
+                   } else {
+                             System.out.println("NONE");
+                   }
+                   i1++;
+          }
+  }
+}
