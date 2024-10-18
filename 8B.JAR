@@ -1,0 +1,133 @@
+//https://codeforces.com/contest/8/problem/B
+import java.util.Scanner;
+import java.util.*;
+public class Demo {
+ 
+  public static void main(String[] args) {
+         Stack<Integer> STACK = new Stack<Integer>();
+      Scanner scanner = new Scanner(System.in); 
+      String a = scanner.nextLine();
+     int x =0 ;
+     int y = 0;
+      
+     int nums[] = new int[a.length()*2+2];
+      nums[0] = 0;
+      nums[1] = 0;
+      int q = 2;
+      int i =0;
+      int u = 0;
+      
+      while(i < a.length()){
+              if(a.charAt(i) == 'L'){
+                      x++;
+              } 
+              else if(a.charAt(i) == 'R'){
+                      x--;
+                       
+              } else if(a.charAt(i) == 'U'){
+                      y++;
+              } else if(a.charAt(i) ==  'D'){
+                      y--;
+                   
+              }
+              nums[q] = x;
+              nums[q+1] = y;
+        //       System.out.println("-%%-");
+            
+        //     System.out.println(y);
+        //         System.out.println(x);
+        //         System.out.println("-%%-");
+              if(i+2 < a.length()){
+                    if(a.charAt(i) == 'L' && a.charAt(i+2) == 'R'){
+                      System.out.println("BUG");
+                      u++;
+                      break;
+                    } 
+                    if(a.charAt(i) == 'R' && a.charAt(i+2) == 'L'){
+                      System.out.println("BUG");
+                      u++;
+                      break;
+                    } 
+                    if(a.charAt(i) == 'U' && a.charAt(i+2) == 'D'){
+                      System.out.println("BUG");
+                      u++;
+                      break;
+                    } 
+                    if(a.charAt(i) == 'D' && a.charAt(i+2) == 'U'){
+                      System.out.println("BUG");
+                      u++;
+                      break;
+                    } 
+              }
+              int o = 0;
+              int m=0;
+              int v=0;
+              while(o < nums.length-1  ){
+                     if(2<i){
+                             
+                   
+                      if(o%2==0){
+                          if(x == nums[o]){
+                            if(y-1 ==  nums[o+1] || y+1 ==  nums[o+1]){
+                                  
+                                   v++; 
+                                    
+                              }  
+                           }
+                          if(y == nums[o+1]){
+                            if(x-1 ==  nums[o] ||x+1 ==  nums[o]){
+                               
+                                   m++; 
+                                 
+                              }  
+                           } 
+                      }
+                              if(u != 1){  
+                                  if(m==2 || v==2){
+                                        //   System.out.println("----");
+                                         
+                                        //    System.out.println(y);
+                                        //    System.out.println(x);
+                                        //      System.out.println("----");
+                                   System.out.println("BUG");
+                                   u++;
+                                   break;
+                                  }
+                              }
+                //       }
+                     }
+                     if(x==0 && y==0){
+                             if(u != 1){ 
+                                System.out.println("BUG");
+                                   u++;
+                                   break;        
+                             }
+                     }
+                      o++;
+              }
+        
+              q = q +2;
+              i++;
+              
+      }
+       
+      if(u != 1){   
+      if(nums.length/2 > 3){
+      if(x == 0 && y == 1 || x == 0 && y == -1){
+              System.out.println("BUG");
+              u++;
+      }else if(y == 0 &&x == 1 || y == 0 && x == -1){
+                System.out.println("BUG");
+              u++;
+      }             
+      }     
+      }
+      if(u != 1){
+               System.out.println("OK");
+      }
+       
+       
+        
+ 
+  }
+}
