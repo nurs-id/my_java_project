@@ -1,0 +1,98 @@
+//https://codeforces.com/contest/14/problem/A
+import java.util.Scanner;
+// import java.lang.Math; 
+// import java.util.Arrays;
+public class Demo {
+ 
+  public static void main(String[] args) {
+         Scanner scanner = new Scanner(System.in); 
+         int i0 = scanner.nextInt();
+         int i1 = scanner.nextInt();
+         int y = 0;
+         int all_length = 0;
+         int max_line = 0;
+         int min_line = i1;
+         String one = "";
+         String letters = scanner.nextLine();
+         String[] all_text = new String[i0*i1];
+         String[] text = new String[i0*i1];
+         int letters_max = 0;
+         int letters_min = 0;
+         int r = -1;
+         int jin = 0;
+         int fg = 0;
+         for(int o = 0; o <i0;o++){
+               letters = scanner.nextLine();
+               
+               text[o] = letters;
+               if(letters.indexOf("*") == -1 && jin == 0){
+                      
+                       letters_min++;
+               } if(letters.indexOf("*") == -1 && r == -1){
+                      
+                        letters_max = o;
+                        r = 1;
+                        
+               } else  if(letters.indexOf("*") != -1){
+                       r = -1;
+                       jin++;
+               }
+             fg = o;
+         }
+          
+           if(r == -1){
+                   letters_max = fg+1;
+                   
+             }
+        //      System.out.println(r);
+        // System.out.println(letters_max + " "+ letters_min);
+         for(int o = letters_min; o <letters_max;o++){
+                letters = text[o];
+            
+             
+                        if(i1 == 1){
+                             one =  one + letters + "\n"  ;
+                        }
+                        
+                        String[] words = letters.split("");
+                            
+                          all_text[y] = letters;
+                       all_length++;
+                         y++;
+                
+         }
+         for(int c = 0; c < all_length; c++){
+                //     System.out.println(all_text[c]);
+                String[] words = all_text[c].split("");
+                for(int yt = 0; yt < i1; yt++){
+                      
+                        if(words[yt].indexOf("*") != -1){
+                              
+                                if(max_line < yt){
+                                        max_line = yt;
+                                }
+                                 if(min_line > yt){
+                                        min_line = yt;
+                                }
+                          
+                        }
+                     
+                }
+         }
+         String finish = "";
+          for(int c = 0; c < all_length; c++){
+                String[] words = all_text[c].split("");
+                finish = "";
+            for(int u = min_line; u <= max_line; u++){
+                finish = finish+words[u];
+            }
+        //     if(i1 != 1) {
+                      System.out.println(finish);
+            }
+        //   }
+//       if(i1 == 1){
+//                       System.out.println(one);
+//             } 
+         
+  }
+}
