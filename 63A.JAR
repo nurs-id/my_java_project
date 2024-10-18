@@ -1,0 +1,56 @@
+//https://codeforces.com/contest/63/problem/A
+import java.util.Scanner;
+import java.lang.Math; 
+import java.util.Arrays;
+public class Demo {
+ 
+  public static void main(String[] args) {
+          Scanner scanner = new Scanner(System.in); 
+         int sum = scanner.nextInt();
+         int i = 0;
+         String[] woman =  new String[sum];
+         String[] rat =  new String[sum];
+         String[] man =  new String[sum];
+         String captain = "";
+         String letters1 = scanner.nextLine();
+         int o = 0;
+         int o1 = 0;
+         int o2 = 0;
+         while(i < sum){
+                letters1 = scanner.nextLine();
+                String[] words = letters1.split(" ");
+                if(words[1].equals("captain")){
+                        captain = words[0];
+                } else if(words[1].equals("woman") || words[1].equals("child")){
+                        woman[o] = words[0];
+                        // System.out.print(woman[o]);
+                        o++;
+                }  else if(words[1].equals("rat") ){
+                        rat[o1] = words[0];
+                        o1++;
+                } else if(words[1].equals("man") ){
+                        man[o2] = words[0];
+                        o2++;
+                } 
+               
+                i++;
+         }
+        int q1 = 0;
+        int q2 = 0;
+        int q3 = 0;
+        while(q1 < o1){
+                System.out.println(rat[q1]);
+                q1++;
+        }
+        while(q2 < o){
+                System.out.println(woman[q2]);
+                q2++;
+        }
+        while(q3 < o2){
+                System.out.println(man[q3]);
+                q3++;
+        }
+        System.out.println(captain);
+         
+  }
+}
