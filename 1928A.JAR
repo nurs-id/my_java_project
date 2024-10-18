@@ -1,0 +1,47 @@
+//https://codeforces.com/contest/1928/problem/A
+import java.util.Scanner;
+import java.lang.Math; 
+import java.util.Arrays;
+public class Demo {
+ 
+  public static void main(String[] args) {
+          Scanner scanner = new Scanner(System.in); 
+          int number1 = scanner.nextInt();
+          int i1 = 0;
+          while(i1 < number1){
+                   int number2 = scanner.nextInt();
+                   int number3 = scanner.nextInt();
+                   int num1 = 0;
+                   int num2= 0;
+                   int o = 0;
+                   if(number2%2==0){
+                           num1 = number3*2;
+                           num2 = number2/2;
+                          if(num1 == number3 && num2 == number2){
+                                   
+                          } else if(num2 == number3 && num1 == number2){
+                                   
+                          } else {
+                                  o++;
+                           }
+                   }
+                   if(number3%2==0){
+                           num1 = number3/2;
+                           num2 = number2*2;
+                           if(number2 == num1 && number3 == num2){
+                               
+                           } else if(number2 == num2 && number3 == num1){
+                                   
+                           } else {
+                                 o++;
+                           }
+                   } 
+                   if(o >0){
+                       System.out.println("YES");     
+                   } else {
+                            System.out.println("NO");
+                   }
+                   i1++;
+          }
+  }
+}
