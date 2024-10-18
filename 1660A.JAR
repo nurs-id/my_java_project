@@ -1,0 +1,24 @@
+//https://codeforces.com/contest/1660/problem/A
+import java.util.Scanner;
+// import java.lang.Math; 
+// import java.util.Arrays;
+import java.util.Arrays;
+import java.util.IntSummaryStatistics;
+
+public class Demo {
+ 
+  public static void main(String[] args) {
+         Scanner scanner = new Scanner(System.in); 
+       int i = scanner.nextInt();
+      for(int o = 0; o < i; o++){
+              int i1 = scanner.nextInt();
+              int i2 = scanner.nextInt();
+              if(i1 < 1){
+                        System.out.println(1);
+              } else {
+                        System.out.println((i1)+ (i2*2)+1);
+              }
+            
+      }
+  }
+}
