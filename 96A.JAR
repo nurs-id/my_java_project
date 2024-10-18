@@ -1,0 +1,24 @@
+//https://codeforces.com/contest/96/problem/A
+import java.util.Scanner;
+// import java.lang.Math; 
+// import java.util.Arrays;
+import java.util.Arrays;
+import java.util.IntSummaryStatistics;
+
+public class Demo {
+ 
+  public static void main(String[] args) {
+         Scanner scanner = new Scanner(System.in);
+        //  String text1 = scanner.nextLine();
+         String a = scanner.nextLine();
+        
+         int index1 = a.indexOf("0000000");
+         int index2 = a.indexOf("1111111");
+         if(index1 == - 1 && index2 == -1) {
+         System.out.println("NO");
+         } else {
+         System.out.println("YES");
+         }
+
+  }
+}
