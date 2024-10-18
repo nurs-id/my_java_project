@@ -1,0 +1,26 @@
+//https://codeforces.com/contest/71/problem/A
+import java.util.Scanner;
+// import java.lang.Math; 
+// import java.util.Arrays;
+import java.util.Arrays;
+import java.util.IntSummaryStatistics;
+
+public class Demo {
+ 
+  public static void main(String[] args) {
+         Scanner scanner = new Scanner(System.in);
+        //  String text1 = scanner.nextLine();
+         int a = scanner.nextInt();
+           String letters = scanner.nextLine();
+         for(int i = 0; i < a; i++){
+                 letters = scanner.nextLine();
+                 String[] words = letters.split("");
+                 if(words.length > 10){
+                        System.out.println(words[0]+(words.length-2)+words[words.length-1]);
+                 } else {
+                        System.out.println(letters);
+                 }
+                
+         }
+  }
+}
