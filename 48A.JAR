@@ -1,0 +1,38 @@
+//https://codeforces.com/contest/48/problem/A
+import java.util.Scanner;
+import java.lang.Math; 
+import java.util.Arrays;
+public class Demo {
+ 
+  public static void main(String[] args) {
+          Scanner scanner = new Scanner(System.in); 
+          String s1 =  scanner.nextLine();;
+          String s2 = scanner.nextLine();
+          String s3 = scanner.nextLine();
+        
+        
+          if(s1.equals("scissors") && s2.equals("paper")&& s3.equals("paper")){
+                  System.out.print("F");
+          } else  if(s1.equals("paper") && s2.equals("rock")&& s3.equals("rock")){
+                  System.out.print("F");
+          } else  if(s1.equals("rock") && s2.equals("scissors")&& s3.equals("scissors")){
+                  System.out.print("F");
+          } else  if(s2.equals("scissors") && s1.equals("paper")&& s3.equals("paper")){
+                  System.out.print("M");
+          } else  if(s2.equals("paper") && s1.equals("rock")&& s3.equals("rock")){
+                  System.out.print("M");
+          } else  if(s2.equals("rock") && s1.equals("scissors")&& s3.equals("scissors")){
+                  System.out.print("M");
+          } else  if(s3.equals("scissors") && s1.equals("paper")&& s2.equals("paper")){
+                  System.out.print("S");
+          } else  if(s3.equals("paper") && s1.equals("rock")&& s2.equals("rock")){
+                  System.out.print("S");
+          } else  if(s3.equals("rock") && s1.equals("scissors")&& s2.equals("scissors")){
+                  System.out.print("S");
+          } else {
+                   System.out.print("?");
+          }
+      
+         
+  }
+}
