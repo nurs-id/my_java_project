@@ -1,0 +1,38 @@
+//https://codeforces.com/contest/1932/problem/A
+import java.util.Scanner;
+import java.lang.Math; 
+import java.util.Arrays;
+public class Demo {
+ 
+  public static void main(String[] args) {
+          Scanner scanner = new Scanner(System.in); 
+          int number1 = scanner.nextInt();
+          int i1 = 0;
+          while(i1 < number1){
+                    int number2 = scanner.nextInt();
+                //     scan.nextLine();
+                   scanner.nextLine(); 
+                   String letters = scanner.nextLine();
+                      int count = 0;
+   String str = letters;
+        String[] arrOfStr = str.split("\\*");
+        for (String a : arrOfStr) {
+            String someString = a;
+char someChar = '@';
+
+ 
+for (int i = 0; i < someString.length(); i++) {
+    if (someString.charAt(i) == someChar) {
+        count++;
+    }
+} 
+
+          if(a.length() == 0){
+              break;
+          }
+        }
+     System.out.println(count);
+                  i1++;
+          }
+  }
+}
