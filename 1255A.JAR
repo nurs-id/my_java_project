@@ -1,0 +1,51 @@
+//https://codeforces.com/contest/1255/problem/A
+import java.util.Scanner;
+import java.lang.Math; 
+// import java.util.Arrays;
+import java.math.BigInteger;
+import java.util.Arrays;
+import java.util.IntSummaryStatistics;
+ 
+public class Demo {
+ 
+  public static void main(String[] args) {
+         Scanner scanner = new Scanner(System.in);
+         int sum = scanner.nextInt();
+         for(int i = 0; i < sum; i++){
+            int sum1 = scanner.nextInt();
+            int sum2 = scanner.nextInt();
+           int o = 0;
+           while(sum1 != sum2){
+                   if(sum1 >= sum2 + 5000){
+                           sum2 = sum2 +5000;
+                           o = o+1000;
+                   } else if(sum1 >= sum2 + 5){
+                           sum2 = sum2 +5;
+                           o++;
+                   } else if(sum1 >= sum2 + 2){
+                           sum2 = sum2 +2;
+                           o++;
+                   } else if(sum1 > sum2){
+                           sum2++;
+                           o++;
+                   } 
+                   if(sum1+ 5000 <= sum2 ){
+                           sum1 = sum1 +5000;
+                           o = o+1000;
+                   } else if(sum1+ 5 <= sum2 ){
+                           sum1 = sum1 +5;
+                           o++;
+                   } else if(sum1  + 2<= sum2){
+                           sum1 = sum1 +2;
+                           o++;
+                   } else if(sum1 < sum2){
+                           sum1++;
+                           o++;
+                   } 
+                       
+           }
+           System.out.println(o);
+         }
+          
+  }
+}
