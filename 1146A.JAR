@@ -1,0 +1,30 @@
+//https://codeforces.com/contest/1146/problem/A
+import java.util.Scanner;
+import java.lang.Math; 
+// import java.util.Arrays;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.IntSummaryStatistics;
+ 
+public class Demo {
+ 
+  public static void main(String[] args) {
+         Scanner scanner = new Scanner(System.in);
+         String n = scanner.nextLine();
+         String[] words = n.split("");
+         int len = words.length;
+         int a = 0;
+         for(int i = 0; i < len; i++){
+                 if(words[i].equals("a")){
+                         a++;
+                 }
+         }
+         if(a > len/2){
+                 System.out.print(len);
+         } else {
+                     System.out.print(2*a -1);
+         }
+         
+  }
+}
