@@ -1,0 +1,45 @@
+//https://codeforces.com/contest/1619/problem/B
+import java.util.Scanner;
+import java.lang.Math; 
+// import java.util.Arrays;
+import java.math.BigInteger;
+import java.util.Arrays;
+import java.util.IntSummaryStatistics;
+ 
+public class Demo {
+ 
+  public static void main(String[] args) {
+         Scanner scanner = new Scanner(System.in);
+         int sum1 = scanner.nextInt();
+        //  sum1 = 1;
+         for(int y = 0; y < sum1;y++){
+              long sum = scanner.nextInt();
+              int all_sum = 0;
+          
+              for(int d =1; d <= sum; d++){
+                        //    int og = d*d;
+                               if((d*d <= sum) && d *d > 0){
+                                       all_sum++;
+                                     
+                                      } else {
+                                              break;
+                                      }
+              }
+               for(int d =1; d <= sum; d++){
+                        //    int og = d*d;
+                               if((d*d*d <= sum)){
+                                     if(Math.sqrt(d*d*d)%1!=0 ){
+                                            all_sum++;        
+                                      }       
+                                     
+                                      } else {
+                                              break;
+                                      }
+              }
+              
+              System.out.println(all_sum);
+         }
+       
+       
+  }
+}
