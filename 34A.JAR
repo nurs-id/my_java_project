@@ -1,0 +1,28 @@
+//https://codeforces.com/contest/34/problem/A
+import java.util.Scanner;
+public class Demo {
+ 
+  public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in); 
+       int i = scanner.nextInt();
+       int u = 1;
+       int ye = 2002;
+       String text = "";
+       for(int a = 0; a < i; a++){
+               int x = scanner.nextInt();
+             
+               if(x == u){
+                       text = text + " "+ Integer. toString(ye -1);
+                       u++;
+               }
+               
+               ye++;
+       }
+       if(u == 1){
+               System.out.print("0");
+       } else {
+               System.out.print(u-1);
+               System.out.print(text);
+       }
+  }
+}
