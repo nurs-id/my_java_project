@@ -1,0 +1,44 @@
+//https://codeforces.com/contest/1250/problem/F
+import java.util.Scanner;
+import java.lang.Math; 
+// import java.util.Arrays;
+import java.util.Arrays;
+import java.util.IntSummaryStatistics;
+ 
+public class Demo {
+ 
+  public static void main(String[] args) {
+         Scanner scanner = new Scanner(System.in);
+        //  String text1 = scanner.nextLine();
+        
+        int i = scanner.nextInt();
+      if(Math.sqrt(i) %1==0){
+              int h = 0;
+              for(int s = 0; s <= Math.sqrt(i); s++){
+                      h++;
+              }
+              h--;
+              System.out.print(h+h+h+h);
+      }else{
+              int sum = i+i+i+i;
+              int zs = 0;
+             for(int h = 2; h < i; h++){
+                     if(i%h == 0){
+                             int s1 = i/h;
+                             int s2 = i/s1;
+                             int l = s1+s2;
+                             if(sum > l){
+                                     zs++;
+                                     sum = l;
+                             }
+                     }
+             }
+             if(zs==0){
+                       System.out.print(i+i+1+1);
+             }else{
+                       System.out.print(sum*2);
+             }
+           
+      }
+  }
+}
