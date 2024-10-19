@@ -1,0 +1,51 @@
+//https://codeforces.com/contest/30/problem/A
+import java.util.Scanner;
+import java.lang.Math; 
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.IntSummaryStatistics;
+import java.util.*; 
+import java.lang.*; 
+public class Demo {
+  public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+     int a1 = scanner.nextInt();
+     int a2 = scanner.nextInt();
+     int a3 = scanner.nextInt();
+     int h = a1*a2 ;
+     String d ="";
+     if(h< 0){
+            d = "-"; 
+            
+     }
+     if(a1<0){
+             a1 = a1*-1;
+     }
+     if(a2<0){
+             a2 = a2*-1;
+     }
+     int x = 0;
+     int z = 0;
+     int q = 0;
+     while(true){
+            x = z;
+           for(int i = 1; i<a3; i++ ){
+                   x = x*z;
+           }  
+           
+           if(x*a1 == a2){
+                   System.out.print(d+z);
+                   break;
+           } else if(x*a1 > a2){
+                   System.out.print("No solution");
+                   break;
+           } else  if(a1 == 0){
+                   System.out.print("No solution");
+                   break; 
+           }
+           z++;
+     }
+  }
+}
