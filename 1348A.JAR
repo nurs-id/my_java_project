@@ -1,0 +1,39 @@
+//https://codeforces.com/contest/1348/problem/A
+import java.util.Scanner;
+import java.lang.Math; 
+// import java.util.Arrays;
+import java.math.BigInteger;
+import java.util.Arrays;
+import java.util.IntSummaryStatistics;
+ 
+public class Demo {
+ 
+  public static void main(String[] args) {
+         Scanner scanner = new Scanner(System.in);
+         int sum1 = scanner.nextInt();
+        //  sum1 = 1;
+         for(int y = 0; y < sum1;y++){
+               int sum = scanner.nextInt();
+               int u =2;
+               int sum3 = 0;
+               int sum2 = 0;
+               int o = sum/2 -1;
+                // System.out.println(o);
+               for(int g = 0; g < sum; g++){
+                      
+                       if(g < o || g == sum-1){
+                               
+                               sum2 = sum2 + u;
+                               
+                       } else {
+                                 sum3 = sum3 + u;
+                       }
+                        u=u*2;
+               }
+               System.out.println(sum2-sum3);
+             
+         }
+       
+       
+  }
+}
