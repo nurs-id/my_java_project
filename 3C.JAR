@@ -1,0 +1,139 @@
+//https://codeforces.com/contest/3/problem/C
+import java.util.Scanner;
+// import java.lang.Math; 
+// import java.util.Arrays;
+public class Demo {
+ 
+  public static void main(String[] args) {
+         Scanner scanner = new Scanner(System.in); 
+         String[] mus = new String[3];
+         String text = "";
+         for(int x = 0; x < 3;x++){
+                 String i = scanner.nextLine();
+                 mus[x] = i;
+                 text = text+i;
+         }
+         
+           int play_x = 9 - text.replace("X", "").length();
+           int play_o = 9- text.replace("0", "").length();
+           int win_x = 0;
+           int win_o = 0;
+           int w_x =0;
+           int w_o =0;
+           for(int d = 0; d < 3; d++){
+                 
+                    if(win_x == 3){
+                            w_x++;
+                    } else  if(win_o == 3){
+                            w_o++;
+                    }
+                   win_x =0;
+                   win_o =0;
+             for(int u = 0; u< 3; u++){
+                   String[] words = mus[u].split("");
+                //    System.out.print( words[d]);    
+                   if(words[d].equals("X")){
+                           win_x++;
+                   } else  if(words[d].equals("0")){
+                           win_o++;
+                        //    System.out.print( win_o );    
+                   }
+             }
+                    if(win_x == 3){
+                            w_x++;
+                    } else  if(win_o == 3){
+                            w_o++;
+                    }
+        //               System.out.print( win_o );    
+        //       System.out.println( "fwmllw");    
+           }
+           
+           win_x = 0;
+           win_o = 0;
+           for(int u = 0; u< 3; u++){
+                   String[] words = mus[u].split("");
+                //    System.out.print(words[d]);    
+                   if(words[u].equals("X")){
+                           win_x++;
+                   } else  if(words[u].equals("0")){
+                           win_o++;
+                   }
+                   
+           }
+        //       System.out.print( win_x+ " "+win_o);
+            if(win_x == 3){
+                w_x++;
+            } else  if(win_o == 3){
+                w_o++;
+            }
+           win_x = 0;
+           win_o = 0;
+            int qa = 2;
+            for(int u = 0; u< 3; u++){
+                   String[] words = mus[u].split("");
+                //    System.out.print(words[qa]);   
+                   if(words[qa].equals("X")){
+                           win_x++;
+                   } else  if(words[qa].equals("0")){
+                           win_o++;
+                   }
+                  
+                   qa--;
+           }
+        //       System.out.print( win_x+ " "+win_o);
+            if(win_x == 3){
+                w_x++;
+            } else  if(win_o == 3){
+                w_o++;
+            }
+                      win_x = 0;
+           win_o = 0;
+           for(int u = 0; u < 3; u++){
+                   if(mus[u].replace("X", "").length() == 0){
+                         win_x++;  
+                        //  System.out.print("fcwcw");  
+                   } else if(mus[u].replace("0", "").length() == 0){
+                            win_o++;
+                   }
+           }
+        //    System.out.print( win_x+ " "+win_o);
+           if(win_x == 3){
+                w_x++;
+            } else  if(win_o == 3){
+                w_o++;
+            }
+            for(int u = 0; u < 3; u++){
+                    if(mus[u].equals("XXX")){
+                            w_x++;
+                    } else   if(mus[u].equals("000")){
+                            w_o++;
+                    }
+            }
+                //     System.out.print( w_x+ " "+w_o);
+           if(play_x < 0 || play_o < 0){
+                   System.out.print("illegal");
+           } else if(w_x != 0 || w_o != 0){
+                //    System.out.print("wfwkcm" + play_x +" "+ play_o+1+" " + w_x+ " "+w_o);
+                   if(w_x != 0 && w_o != 0){
+                             System.out.print("illegal");
+                   } else if(play_x == play_o+1 && w_x != 0 && w_o == 0){
+                           System.out.print("the first player won");
+                   } else if(play_x == play_o && w_o != 0 && w_x == 0){
+                           System.out.print("the second player won");
+                   } else {
+                           System.out.print("illegal");
+                   }
+           } else if(play_x == play_o+1){
+                   if(play_x +  play_o  == 9){
+                               System.out.print("draw");
+                   } else {
+                               System.out.print("second");
+                   }
+                
+           } else if(play_x == play_o){
+                    System.out.print("first");
+           } else {
+                    System.out.print("illegal");
+           }
+  }
+}
