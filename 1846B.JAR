@@ -1,0 +1,79 @@
+//https://codeforces.com/contest/1846/problem/B
+import java.util.Scanner;
+import java.lang.Math; 
+// import java.util.Arrays;
+import java.math.BigInteger;
+import java.util.Arrays;
+import java.util.IntSummaryStatistics;
+ 
+public class Demo {
+ 
+  public static void main(String[] args) {
+         Scanner scanner = new Scanner(System.in);
+         int sum = scanner.nextInt();
+        //  sum = 1;
+         String text1 = scanner.nextLine();
+         for(int i = 0; i < sum; i++){
+                 String mas[] = new String[9];
+                 String win = "DRAW";
+                 int u = 0;
+                 for(int y = 0; y < 3; y++){
+                         text1 = scanner.nextLine();
+                         String words[] = text1.split("");
+                         for(int d =0; d<3; d++){
+                                     mas[u] = words[d];
+                                      
+                                     u++;
+                         }
+                                if( words[0].equals(".")){
+                                        
+                                } else {
+                                      if(words[0].equals(words[1]) && words[1].equals(words[2]) ){
+                                        //   System.out.print(words[1]);
+                                          win = words[1];
+                                      }   
+                                }
+                               
+                        
+                 }
+                 
+                                for(int q = 0; q < 3; q++){
+                                       
+                                        if( mas[q].equals(".")){
+                                        
+                                         }
+                                         else {
+                                         if(mas[q].equals(mas[q+3]) && mas[q+3].equals(mas[q+6]) ){
+                                        
+                                          win = mas[q];
+                                         }   
+                                         }
+                                 
+                                        // k++;
+                                        
+                                }
+                                 if( mas[0].equals(".")){
+                                        
+                                         }
+                                         else {
+                                         if(mas[0].equals(mas[4]) && mas[4].equals(mas[8]) ){
+                                        
+                                          win = mas[0];
+                                         }   
+                                         }
+                                          if( mas[2].equals(".")){
+                                        
+                                         }
+                                         else {
+                                         if(mas[2].equals(mas[4]) && mas[4].equals(mas[6]) ){
+                                       
+                                          win = mas[2];
+                                         }   
+                                         }
+                                           System.out.println(win);
+         }
+         
+       
+       
+  }
+}
