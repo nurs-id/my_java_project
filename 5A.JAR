@@ -1,0 +1,36 @@
+//https://codeforces.com/contest/5/problem/A
+import java.util.Scanner;
+import java.lang.Math; 
+// import java.util.Arrays;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.IntSummaryStatistics;
+ 
+public class Demo {
+  public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int h = 0;
+        String i = "";
+        int sum = 0;
+        while(true){
+                try{
+                  i = scanner.nextLine();
+                  if(i.contains("+")){
+                          h++;
+                  }  else  if(i.contains("-")){
+                          h--;
+                  }  else {
+                          String words[] = i.split(":");
+                          int len = words[0].length();
+                          int len_all = i.length();
+                          sum = sum + ((len_all-len -1)*h);
+                  }
+                } catch (Exception e) {
+                  break;
+                }
+        }
+        System.out.print(sum);
+     }
+}
