@@ -1,0 +1,31 @@
+//https://codeforces.com/contest/854/problem/A
+import java.util.Scanner;
+public class Demo {
+         
+  public static void main(String[] args) {
+       Scanner scanner = new Scanner(System.in);
+       int i = scanner.nextInt(); 
+       int o = i/2;
+       if(i%2==0){
+               o--;
+       }
+       while(true){
+               int t = 0;
+               for(int x = 2; x < 10; x++){
+               if((i-o)%x==0 && o%x==0){
+                       t = 1;
+                       break;
+               }
+               }  
+            //   System.out.print("s");
+               if(t == 0){
+                       break;
+               } 
+                       o--;
+              
+               
+       }
+     
+       System.out.print(o+" "+(i-o));
+  }
+}
