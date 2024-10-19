@@ -1,0 +1,64 @@
+//https://codeforces.com/contest/1955/problem/C
+import java.util.Scanner;
+import java.lang.Math; 
+// import java.util.Arrays;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.IntSummaryStatistics;
+ 
+public class Demo {
+         
+  public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int i1 = scanner.nextInt();
+        // i1 = 2;
+        for(int i = 0; i < i1; i++){
+               int o1 = scanner.nextInt();
+               long o2 = scanner.nextLong();
+               long u[] = new long[o1];
+               for(int l =0; l < o1; l++){
+                       u[l] = scanner.nextInt();
+                //       System.out.print(u[l]);
+               }
+               int n = 0;
+               int len = o1 - 1;
+               long na1 = o2/2;
+               long na2 = o2/2;
+               if(o2%2==1){
+                      na1++; 
+               }
+               for(int l = 0; l < o1; l++){
+                       if(u[l] != 0){
+                           if(na1 >= u[l]){
+                               na1 = na1-u[l];
+                               u[l] = 0;
+                       } else {
+                               u[l] = u[l]-na1;
+                               break;
+                       }    
+                       }
+                       
+               }
+                for(int l = o1-1; l >= 0 ; l--){
+                        if(u[l] != 0){
+                       if(na2 >= u[l]){
+                               na2 = na2-u[l];
+                               u[l] = 0;
+                       } else {
+                        u[l] = u[l]-na2;
+                               break;
+                       }
+                        }
+               }
+               int y = 0;
+               for(int l =0; l < o1; l++){
+                       if(u[l] == 0){
+                               y++;
+                       }
+               }
+               System.out.println(y);
+        }
+}
+}
