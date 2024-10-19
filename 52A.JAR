@@ -1,0 +1,25 @@
+//https://codeforces.com/contest/52/problem/A
+import java.util.Scanner;
+import java.lang.Math; 
+// import java.util.Arrays;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.IntSummaryStatistics;
+ 
+public class Demo {
+  public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+      int i = scanner.nextInt();
+      String k = scanner.nextLine();
+      k = scanner.nextLine();
+      String n = k.replace(" ", "");
+      int x = n.length();
+      int x1 = n.replace("1", "").length();
+      int x2 = n.replace("2", "").length();
+      int x3 = n.replace("3", "").length();
+       int y = (Math.min(x1, x2));
+       System.out.print(Math.min(y, x3));
+     }
+  
+}
