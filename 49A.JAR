@@ -1,0 +1,44 @@
+//https://codeforces.com/contest/49/problem/A
+import java.util.Scanner;
+import java.lang.Math; 
+// import java.util.Arrays;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.IntSummaryStatistics;
+ 
+public class Demo {
+         public static boolean isLatinLetterString(String str) {
+        // Проверяем, содержит ли строка только латинские буквы
+        return str.matches("[A-Za-z]+");
+    }
+    public static String toLowerCase(String str) {
+        // Преобразуем всю строку в нижний регистр
+        return str.toLowerCase();
+    }
+   
+  public static void main(String[] args) {
+         Scanner scanner = new Scanner(System.in);
+        String w1 = scanner.nextLine();
+        String[] words = w1.split("");
+        int len = words.length;
+        String text = "";
+        for(int s =0; s < words.length;s++){
+                    if(isLatinLetterString(words[s])){
+                        text = words[s];
+                    }   
+                  }
+      
+     text = toLowerCase(text);
+        // System.out.print(text);     
+           
+            if (text.equals("e") || text.equals("a")|| text.equals("y") || text.equals("i")|| text.equals("o")|| text.equals("u")) {      
+                System.out.println("YES");
+            } else{
+                System.out.println("NO");
+            }
+    
+
+   
+     }
+}
