@@ -1,0 +1,36 @@
+//https://codeforces.com/contest/25/problem/A
+import java.util.Scanner;
+import java.lang.Math; 
+// import java.util.Arrays;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.IntSummaryStatistics;
+ 
+public class Demo {
+  public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int i = scanner.nextInt();
+        int i1 =0;
+        int i2 =0;
+        int y = 0; 
+        int y1 = 0;
+        for(int x =0; x < i; x++ ){
+              int a = scanner.nextInt();
+              if(a%2==0){
+                      i1++;
+                      y = x;
+              } else {
+                      y1 = x;
+                      i2++;
+              } 
+             
+               
+        }
+              if(i1 > i2){
+                   System.out.println(y1+1);   
+              } else {
+                   System.out.println(y+1);   
+              }
+     }
+}
