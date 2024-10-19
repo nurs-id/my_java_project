@@ -1,0 +1,97 @@
+//https://codeforces.com/contest/34/problem/C
+import java.util.Scanner;
+import java.lang.Math; 
+// import java.util.Arrays;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.IntSummaryStatistics;
+import java.util.*; 
+import java.lang.*; 
+public class Demo {
+         
+  public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String text = scanner.nextLine();
+        String words[] = text.split(",");
+        // System.out.print(words.length);
+        if(words.length == 1){
+                  System.out.print(text);
+        } else {
+        String text1 = "";
+        for(int a = 0; a < words.length; a++){
+                int o = 0; 
+                 String words1[] = text1.split("!");
+                 for(int u =0 ; u < words1.length; u++){
+                         if(words[a].equals(words1[u])){
+                                 o++;
+                         }
+                 }
+                 if(o == 0){
+                        text1 = text1 +"!"+words[a];
+                 } 
+        }
+        text1 = text1+"!";
+        String text_l = "";
+        String words_li[] = text1.split("!");
+        for(int h =1; h < words_li.length; h++){
+                String words_l[] = text1.split("!");
+                int min = Integer.valueOf(words_l[1]);
+                for(int i = 1; i < words_l.length; i++){
+                  if(min > Integer.valueOf(words_l[i])){
+                          min = Integer.valueOf(words_l[i]);
+                  }
+                }
+                 text1 = text1.replace("!"+ min+"!", "!");
+                 text_l = text_l + "!"+min;
+        }
+         text_l = text_l + "!"+3;
+       String words2[] = text_l.split("!");
+//       System.out.print(text_l);
+       int min =  Integer.valueOf(words2[1]);
+       int o = 0;
+       int cou1 = 0;
+       int min1 = 0;
+       int min2 =0;
+       int cou2 = 0;
+       for(int i =2; i < words2.length; i++){
+               int sum1 =  Integer.valueOf(words2[i]);
+               if(min+1 == sum1){
+                 min1 = min;
+                 if(o == 0){
+                        cou2 = cou1;
+                        min2 = min;
+                 }
+                 o++;
+                // System.out.print("wdwd");
+               } else {
+                    if(o == 0){
+                        if(cou1 == 0){
+                                System.out.print(min);
+                        } else {
+                                System.out.print(","+min);
+                        }
+                    } else if(o == 1){
+                        if(cou2 == 0){
+                                System.out.print(min2+"-"+min);
+                        } else {
+                                System.out.print(","+min2+"-"+min);
+                        }
+                        o = 0;
+                    }else {
+                        if(cou2 == 0){
+                                System.out.print(min2 + "-"+min);
+                        } else {
+                                System.out.print(","+min2+"-"+min);
+                        } 
+                        o = 0;
+                    }
+               }
+               min = sum1;
+               cou1++;
+       }
+        
+        }
+}
+}
