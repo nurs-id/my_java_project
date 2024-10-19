@@ -1,0 +1,30 @@
+//https://codeforces.com/contest/66/problem/A
+import java.math.BigInteger;
+import java.util.Scanner;
+public class Main {
+    public static void main(String[] args) {
+        // Максимальное значение типа long в Java
+        BigInteger maxLongValue = BigInteger.valueOf(Long.MAX_VALUE);
+         BigInteger minLongValue = BigInteger.valueOf(Long.MIN_VALUE);
+        Scanner scanner = new Scanner(System.in);
+        // Пример переменной
+        BigInteger myVariable = scanner.nextBigInteger();
+
+        // Проверка значения переменной
+        if (myVariable.compareTo(maxLongValue) > 0 || myVariable.compareTo(minLongValue) < 0) {
+            System.out.println("BigInteger");
+        } else {
+            // Действия, если значение переменной меньше или равно максимальному значению long
+                  long a = myVariable.longValue();
+            if(a >= -128 && a <=  127  ){
+               System.out.print("byte");
+       } else if(a >= -32768 && a <=  32767  ){
+               System.out.print("short");
+       } else if(a >= -2147483648 && a <=  2147483647  ){
+               System.out.print("int");
+       } else {
+               System.out.print("long");
+       } 
+        }
+    }
+}
