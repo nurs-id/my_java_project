@@ -1,0 +1,32 @@
+//https://codeforces.com/contest/75/problem/A
+import java.util.Scanner;
+import java.lang.Math; 
+// import java.util.Arrays;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.IntSummaryStatistics;
+ 
+public class Demo {
+         
+  public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String i1 = scanner.nextLine();
+        String i2 = scanner.nextLine();
+        long u1 = Long.parseLong(i1);
+        long u2 = Long.parseLong(i2);
+        long d = u1+u2;
+        String i3 = Long.toString(d);
+         String y1 = i1.replace("0", "");
+         String y2 = i2.replace("0", "");
+         String y3 = i3.replace("0", "");
+        if(Long.parseLong(y1)+Long.parseLong(y2) == Long.parseLong(y3) ){
+                System.out.print("YES");
+        } else {
+                System.out.print("NO");
+        }
+        
+        
+}
+}
