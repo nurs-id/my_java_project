@@ -1,0 +1,24 @@
+//https://codeforces.com/contest/26/problem/B
+import java.util.Scanner;
+public class Demo {
+ 
+  public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in); 
+        String text = scanner.nextLine();
+        int sum = text.length();
+        int a = 0; 
+        int p = 0;
+        for(int i = 0;  i < sum; i ++){
+                char x = text.charAt(i);
+                // System.out.print(x);
+                if(x == '('){
+                        a++;
+                }
+                if(x == ')' && a != 0){
+                        a--;
+                        p = p+2;
+                }
+        }
+        System.out.print(p);
+  }
+}
