@@ -1,0 +1,28 @@
+https://codeforces.com/contest/45/problem/A
+import java.util.Scanner;
+import java.lang.Math; 
+// import java.util.Arrays;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.IntSummaryStatistics;
+ 
+public class Demo {
+         
+  public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String mouth[] = { "January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"};
+        String day = scanner.nextLine();
+        int days = scanner.nextInt();
+        int h = 0;
+        for(int i = 0; i < 12; i++){
+                if(mouth[i].equals(day)){
+                         h=i;
+                        break;
+                       
+                }
+        }
+        System.out.print(mouth[(h+days)%12]);
+}
+}
