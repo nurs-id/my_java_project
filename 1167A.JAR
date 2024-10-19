@@ -1,0 +1,39 @@
+//https://codeforces.com/contest/1167/problem/A
+import java.util.Scanner;
+import java.lang.Math; 
+// import java.util.Arrays;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.IntSummaryStatistics;
+ 
+public class Demo {
+ 
+  public static void main(String[] args) {
+         Scanner scanner = new Scanner(System.in);
+         int i = scanner.nextInt();
+         for(int a = 0; a < i; a++){
+                 int t = scanner.nextInt();
+                 String text = scanner.nextLine();
+                 text = scanner.nextLine();
+                 String[] words = text.split("");
+                 int n = 0;
+                 for(int g = 0; g < t; g++){
+                         if(words[g].equals("8") && n ==0){
+                                 n++;
+                                //  System.out.println("YES1");
+                         } else if(n>=1){
+                                //  System.out.println("YES4");
+                                n++;
+                         }
+                 }
+                //  System.out.println(n);
+                 if(n >=11){
+                         System.out.println("YES");
+                 } else {
+                           System.out.println("NO");
+                 }
+         }
+        //  System.out.print(all);
+  }
+}
