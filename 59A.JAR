@@ -1,0 +1,26 @@
+//https://codeforces.com/contest/59/problem/A
+import java.util.Scanner;
+public class Demo {
+ 
+  public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in); 
+        String text = scanner.nextLine();
+        int Up = 0;
+        int Low = 0;
+        for(int i =0; i < text.length();i++){
+                char x = (text.charAt(i));
+                if(Character.isUpperCase(x)){
+                        Up++;
+                } else  if(Character.isLowerCase(x)){
+                        Low++;
+                } else {
+                        
+                }
+        }
+        if(Up > Low){
+                System.out.print(text.toUpperCase());
+        } else {
+                System.out.print(text.toLowerCase());
+        }
+  }
+}
