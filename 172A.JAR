@@ -1,0 +1,33 @@
+//https://codeforces.com/contest/172/problem/A
+import java.util.Scanner;
+public class Demo {
+         
+  public static void main(String[] args) {
+       Scanner scanner = new Scanner(System.in);
+       int i = scanner.nextInt();
+       scanner.nextLine();
+       String[] letters = new String[i];
+       for(int o = 0; o < i; o++){
+               letters[o] = scanner.nextLine();
+       }
+       int l = letters[0].length();
+//       System.out.print(l);
+       int v = 0;
+       for(int o = 0; o < l; o++){
+               int u = 0;
+               char x = letters[0].charAt(o);
+               
+               for(int c = 0; c < i; c++){
+                       if(letters[c].charAt(o)!=x){
+                               u ++;
+                       } 
+               }
+               if(u == 0){
+                  v++;    
+               } else {
+                  break;
+               }
+       }
+        System.out.print(v);
+  }
+}
