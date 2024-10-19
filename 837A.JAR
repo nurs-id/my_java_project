@@ -1,0 +1,29 @@
+//https://codeforces.com/contest/837/problem/A
+import java.util.Scanner;
+public class Demo {
+         
+  public static void main(String[] args) {
+       Scanner scanner = new Scanner(System.in);
+       int i = scanner.nextInt(); 
+       String letters = scanner.nextLine();
+       letters = scanner.nextLine();
+//       System.out.print(letters);
+       String[] words = letters.split(" ");
+       int max = 0;
+       for(int x =0; x < words.length;x++){
+               int f = 0;
+               for(int u = 0; u < words[x].length(); u++){
+                      char cw =(words[x].charAt(u));
+                     
+                //       System.out.print(Character.isUpperCase(re.charAt(0)));
+                      if(Character.isUpperCase(cw)){
+                              f++;
+                      }
+               }
+               if(f > max){
+                       max = f;
+               }
+       }
+       System.out.print(max);
+  }
+}
