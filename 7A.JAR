@@ -1,0 +1,43 @@
+//https://codeforces.com/contest/7/problem/A
+import java.util.Scanner;
+import java.lang.Math; 
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.IntSummaryStatistics;
+import java.util.*; 
+import java.lang.*; 
+public class Demo {
+  public static void main(String[] args) {
+      Scanner scanner = new Scanner(System.in); 
+      String[] words = new String[9] ;
+      int sum = 0;
+      for(int i = 0; i < 8; i++){
+              String text = scanner.nextLine();
+              words[i] = text;
+              if(text.equals("BBBBBBBB")){
+                      sum++;
+              }
+      }
+      int x = 0;
+      for(int i = 0; i<8;i++){
+              x =0;
+              for(int k =0; k <8;k++){
+                      String[] word = words[k].split("");
+                      if(word[i].equals("B")){
+                         x++;     
+                      }
+              }
+              if(x == 8){
+                    sum++;
+              }
+      }
+      if(sum == 16){
+               System.out.print("8");
+      } else {
+               System.out.print(sum);
+      }
+      
+  }
+}
