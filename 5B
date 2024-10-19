@@ -1,0 +1,78 @@
+//https://codeforces.com/contest/5/problem/B
+import java.util.Scanner;
+import java.lang.Math; 
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.IntSummaryStatistics;
+import java.util.*; 
+import java.lang.*; 
+public class Demo {
+  public static void main(String[] args) {
+    Scanner scanner = new Scanner(System.in);
+    String text = "@";
+    int max = 0;
+    while(scanner.hasNextLine()){
+            String a = scanner.nextLine();
+            if(max < a.length()){
+                    max = a.length();
+            }
+            text = text + a+"@"; 
+    }
+    text = text + "a"+"@"; 
+//       System.out.print(max);
+//       System.out.print(text);
+   String[] words = text.split("@");
+   int p = 0;
+   String oq = "";
+   int r = max;
+    while(r != 0){
+    oq = oq+"*";
+    r--;
+    }
+    System.out.println("**"+oq);
+   for(int i =1; i < words.length-1; i++){
+           
+           int len = max-words[i].length();
+           String f = "";
+           int s1 = len/2; 
+           int s2 = len - s1;
+           int w = len%2;
+           if(p == 0){
+           while(s1 != 0){
+           f = f+" ";
+           s1--;
+           }
+           f = f+words[i];
+           while(s2 != 0){
+           f = f+" ";
+           s2--;
+           }
+           if(w == 0){
+                   
+           } else {
+                    p++;    
+           }
+           } else {
+           while(s2 != 0){
+           f = f+" ";
+           s2--;
+           }
+           f = f+words[i];
+           while(s1 != 0){
+           f = f+" ";
+           s1--;
+           }
+            if(w == 0){
+                   
+           } else {
+                    p = 0;    
+           }
+           }
+          System.out.println("*"+f+"*");
+           
+   }
+    System.out.print("**"+oq);
+  }
+}
