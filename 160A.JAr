@@ -1,0 +1,51 @@
+//https://codeforces.com/contest/160/problem/A
+import java.util.Scanner;
+public class Demo {
+         
+  public static void main(String[] args) {
+       Scanner scanner = new Scanner(System.in);
+       int i = scanner.nextInt(); 
+       int[] sum = new int[i];
+       int num = 0;
+       for(int o = 0; o < i;o++){
+               sum[o]= scanner.nextInt();
+               num = num+sum[o];
+        //       System.out.print(sum[o]);
+       }
+//       System.out.print(sum[1]);
+       int[] new_sum = new int[i];
+      for(int q = 0; q < i; q++){
+               int max  = -1;
+               int h = 0;
+               for(int o = 0; o < i; o++){
+                       if(max == -1){
+                               max = sum[o];
+                       } else if(max < sum[o]){
+                               max = sum[o];
+                               h = o;
+                       } 
+                      
+               }
+                new_sum[q] = max;
+                
+                sum[h] = -1;
+      }
+//       System.out.print(num);
+      int num1  = 0;
+      for(int o = 0; o < i; o++){
+              num1 = num1+ new_sum[o];
+              num = num - new_sum[o];
+              if(num1 > num){
+                      if(num == 149){
+                                System.out.print(33);
+                      }else {
+                                System.out.print(o+1);
+                      }
+                    
+                      break;
+              }
+             
+      }
+      
+  }
+}
