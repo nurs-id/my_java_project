@@ -1,0 +1,23 @@
+//https://codeforces.com/contest/1985/problem/A
+import java.util.Scanner;
+import java.lang.Math; 
+// import java.util.Arrays;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.IntSummaryStatistics;
+ 
+public class Demo {
+         
+  public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        int i1 = scanner.nextInt();
+         String h = scanner.nextLine();
+        for(int i = 0; i < i1; i++){
+                 h = scanner.nextLine();
+                String words[] = h.split("");
+                System.out.println(words[4]+words[1]+words[2]+" "+words[0]+ words[5]+words[6]);
+        }
+}
+}
