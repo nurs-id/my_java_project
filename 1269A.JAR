@@ -1,0 +1,10 @@
+//https://codeforces.com/contest/1269/problem/A
+import java.util.Scanner;
+public class Demo {
+ 
+  public static void main(String[] args) {
+         Scanner scanner = new Scanner(System.in);
+         int sum1 = scanner.nextInt();
+         System.out.print(sum1*9 +" " + sum1*8);
+  }
+}
