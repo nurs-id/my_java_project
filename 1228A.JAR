@@ -1,0 +1,38 @@
+//https://codeforces.com/contest/1228/problem/A
+import java.util.Scanner;
+import java.lang.Math; 
+// import java.util.Arrays;
+import java.util.Arrays;
+import java.util.IntSummaryStatistics;
+ 
+public class Demo {
+ 
+  public static void main(String[] args) {
+         Scanner scanner = new Scanner(System.in);
+        //  String text1 = scanner.nextLine();
+        int num1 = scanner.nextInt();
+        int num2 = scanner.nextInt();
+        int jk = 0;
+        for(int i = num1; i <= num2; i++){
+                String b_num = String.valueOf(i);
+                String[] words = b_num.split("");
+                int v =0;
+                int len = words.length;
+                for(int o =0; o<len;o++){
+                        for(int h =0; h<len;h++){
+                                if(words[h].equals(words[o]) && h!=o){
+                                        v++;
+                                }
+                        }
+                }
+                if(v==0){
+                         System.out.println(b_num);
+                         jk++;
+                         break;
+                }
+        }
+        if(jk==0){
+               System.out.println(-1);  
+        }
+  }
+}
