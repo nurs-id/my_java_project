@@ -1,0 +1,35 @@
+https://codeforces.com/contest/155/problem/A
+import java.util.Scanner;
+import java.lang.Math; 
+// import java.util.Arrays;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.IntSummaryStatistics;
+import java.util.*; 
+import java.lang.*; 
+public class Demo {
+         
+  public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+       int i = scanner.nextInt();
+       int y = scanner.nextInt();
+      int min = y;
+      int max = y;
+      int h = 0; 
+      for(int a = 1; a < i; a++){
+              y = scanner.nextInt();
+              if(y > max){
+                      max = y;
+                      h++;
+              } else if(y < min){
+                      min = y;
+                      h++;
+              }
+
+      }
+              System.out.print(h);
+      
+}
+}
