@@ -1,0 +1,28 @@
+//https://codeforces.com/contest/99/problem/A
+import java.util.Scanner;
+import java.lang.Math; 
+// import java.util.Arrays;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.IntSummaryStatistics;
+import java.util.*; 
+import java.lang.*; 
+public class Demo {
+         
+  public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String text = scanner.nextLine();
+       int x = text.indexOf(".");
+       if(text.charAt(x-1) == '9'){
+           System.out.print(("GOTO Vasilisa."));
+       } else {
+          if(text.charAt(x+1) >= '5'){
+               System.out.print(text.substring(0,x-1)+ (Integer.parseInt(text.substring(x-1,x))+1));
+          } else {
+                System.out.print(text.substring(0,x));
+          }
+       }
+}
+}
