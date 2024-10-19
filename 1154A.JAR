@@ -1,0 +1,29 @@
+//https://codeforces.com/contest/1154/problem/A
+import java.util.Scanner;
+import java.lang.Math; 
+// import java.util.Arrays;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.IntSummaryStatistics;
+ 
+public class Demo {
+ 
+  public static void main(String[] args) {
+         Scanner scanner = new Scanner(System.in);
+         int i1 = scanner.nextInt();
+         int i2 = scanner.nextInt();
+         int i3 = scanner.nextInt();
+         int i4 = scanner.nextInt();
+         if(i1 > i2 &&i1 > i3&&i1 > i4){
+               System.out.println((i1-i2)+" "+(i1-i3)+" "+(i1-i4));  
+         } else  if(i2 > i1 &&i2 > i3&&i2 > i4){
+                   System.out.println((i2-i1)+" "+(i2-i3)+" "+(i2-i4));  
+         } else if(i3 > i2 &&i3 > i1&&i3 > i4){
+                   System.out.println((i3-i2)+" "+(i3-i1)+" "+(i3-i4));  
+         } else {
+                   System.out.println((i4-i2)+" "+(i4-i3)+" "+(i4-i1));  
+         }
+         
+  }
+}
