@@ -1,0 +1,21 @@
+//https://codeforces.com/contest/822/problem/A
+import java.util.Scanner;
+public class Demo {
+         
+  public static void main(String[] args) {
+       Scanner scanner = new Scanner(System.in);
+       long i1 = scanner.nextLong();
+       long i2 = scanner.nextLong();
+       long sum = 1; 
+       if(i1 > i2){
+               for(int x = 1; x <= i2; x++){
+                       sum = sum *x;
+               }
+       } else {
+           for(int x = 1; x <= i1; x++){
+                       sum = sum *x;
+               }    
+       }
+       System.out.print(sum);
+  }
+}
