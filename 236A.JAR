@@ -1,0 +1,32 @@
+//https://codeforces.com/contest/236/problem/A
+import java.util.Scanner;
+import java.lang.Math; 
+// import java.util.Arrays;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.IntSummaryStatistics;
+import java.util.*; 
+import java.lang.*; 
+public class Demo {
+         
+  public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        String text = scanner.nextLine();
+       String text1 = "";
+       int  o = text.length();
+       int y = 0;
+       while(o != 0){
+             text = text.replace(String.valueOf(text.charAt(0)), "");
+              o = text.length();
+             y++;
+       }
+       if(y%2==0){
+                 System.out.print("CHAT WITH HER!");
+       } else {
+                 System.out.print("IGNORE HIM!");
+       }
+     
+}
+}
