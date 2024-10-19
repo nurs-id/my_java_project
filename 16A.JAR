@@ -1,0 +1,35 @@
+//https://codeforces.com/contest/16/problem/A
+import java.util.Scanner;
+// import java.lang.Math; 
+// import java.util.Arrays;
+public class Demo {
+ 
+  public static void main(String[] args) {
+         Scanner scanner = new Scanner(System.in); 
+    int i1 = scanner.nextInt();
+    int u = 0;
+    int r = 0;
+    String h = "";
+    int i2 = scanner.nextInt();
+    String text = scanner.nextLine();
+    for(int i =0; i < i1;i++){
+            text = scanner.nextLine();
+            String[] words = text.split("");
+            int text_l = text.replace(words[0], "").length();
+            if(h.equals(words[0])){
+                    r++;
+            }
+            h = words[0];
+            if(text_l == 0){
+                    
+            } else {
+                    u++;
+            }
+    }
+    if(u == 0 && r == 0){
+            System.out.print("YES");
+    } else {
+                System.out.print("NO");
+    }
+  }
+}
