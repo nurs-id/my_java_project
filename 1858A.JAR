@@ -1,0 +1,40 @@
+//https://codeforces.com/contest/1858/problem/A
+import java.util.Scanner;
+import java.lang.Math; 
+// import java.util.Arrays;
+import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Map.Entry;
+import java.util.IntSummaryStatistics;
+ 
+public class Demo {
+         
+  public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+       int i = scanner.nextInt();
+//       i = 1;
+          String text = scanner.nextLine();
+       for(int j = 0; j < i ; j++){
+      
+         text = scanner.nextLine();
+         String words[] = text.split(" ");
+         int num[] = new int[3];
+         for(int o = 0; o < 3; o++){
+                 num[o] = Integer.valueOf(words[o]); 
+         }
+         if(num[0] > num[1]){
+                 System.out.println("First");
+         } else  if(num[0] < num[1]){
+                 System.out.println("Second");
+         } else {
+                if(num[2]%2==0){
+                        System.out.println("Second");
+                } else {
+                        System.out.println("First");
+                }
+         }
+       }
+       
+}
+}
