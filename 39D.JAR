@@ -1,0 +1,29 @@
+//https://codeforces.com/contest/39/problem/D
+import java.util.Scanner;
+public class Demo {
+ 
+  public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in); 
+    String d = scanner.nextLine();
+    String d1 = scanner.nextLine();
+    int j = d.replace("1", "").length();
+    int j1 = d1.replace("1", "").length();
+    
+  
+              if(d.charAt(2) == '0'  && d1.charAt(2) == '0' || d.charAt(0) == '0'  && d1.charAt(0) == '0' || d.charAt(4) == '0'  && d1.charAt(4) == '0'){
+                         System.out.print("YES");
+              } else {
+                   if(d1.charAt(0) == '1'  && d1.charAt(2) == '1'  && d1.charAt(4) == '1' && j != 5 || d.charAt(0) == '1'  && d.charAt(2) == '1'  && d.charAt(4) == '1' && j1 != 5){
+                             System.out.print("YES");
+                   } else {
+                           if(j == 3 && j1 == 3){
+                                    System.out.print("YES");
+                           } else {
+                                    System.out.print("NO");
+                           }
+                            
+                   }
+              }
+  
+  }
+}
